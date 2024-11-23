@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="inventarioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="estatus">
+          <Key>
+            <PropertyRef Name="id_Estatus" />
+          </Key>
+          <Property Name="id_Estatus" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="InConteo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="estatus" Type="int" />
+        </EntityType>
+        <Association Name="FK__InConteo__estatu__4BAC3F29">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="0..1" />
+          <End Role="InConteo" Type="Self.InConteo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="id_Estatus" />
+            </Principal>
+            <Dependent Role="InConteo">
+              <PropertyRef Name="estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="inventarioModelStoreContainer">
+          <EntitySet Name="estatus" EntityType="Self.estatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InConteo" EntityType="Self.InConteo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__InConteo__estatu__4BAC3F29" Association="Self.FK__InConteo__estatu__4BAC3F29">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="InConteo" EntitySet="InConteo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="inventarioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="estatus">
+          <Key>
+            <PropertyRef Name="id_Estatus" />
+          </Key>
+          <Property Name="id_Estatus" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="InConteo" Relationship="Self.FK__InConteo__estatu__4BAC3F29" FromRole="estatus" ToRole="InConteo" />
+        </EntityType>
+        <EntityType Name="InConteo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="estatus" Type="Int32" />
+          <NavigationProperty Name="estatus1" Relationship="Self.FK__InConteo__estatu__4BAC3F29" FromRole="InConteo" ToRole="estatus" />
+        </EntityType>
+        <Association Name="FK__InConteo__estatu__4BAC3F29">
+          <End Role="estatus" Type="Self.estatus" Multiplicity="0..1" />
+          <End Role="InConteo" Type="Self.InConteo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estatus">
+              <PropertyRef Name="id_Estatus" />
+            </Principal>
+            <Dependent Role="InConteo">
+              <PropertyRef Name="estatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="inventarioEntitie" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="estatus" EntityType="Self.estatus" />
+          <EntitySet Name="InConteo" EntityType="Self.InConteo" />
+          <AssociationSet Name="FK__InConteo__estatu__4BAC3F29" Association="Self.FK__InConteo__estatu__4BAC3F29">
+            <End Role="estatus" EntitySet="estatus" />
+            <End Role="InConteo" EntitySet="InConteo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="inventarioModelStoreContainer" CdmEntityContainer="inventarioEntitie">
+          <EntitySetMapping Name="estatus">
+            <EntityTypeMapping TypeName="inventarioModel.estatus">
+              <MappingFragment StoreEntitySet="estatus">
+                <ScalarProperty Name="id_Estatus" ColumnName="id_Estatus" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InConteo">
+            <EntityTypeMapping TypeName="inventarioModel.InConteo">
+              <MappingFragment StoreEntitySet="InConteo">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

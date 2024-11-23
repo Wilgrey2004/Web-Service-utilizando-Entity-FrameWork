@@ -1,0 +1,24 @@
+# Archivos de configuración específicos del entorno
+appsettings.*.json
+secrets.json
+
+# Archivos binarios y de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Configuración del IDE (Visual Studio/JetBrains Rider)
+.vscode/
+.vs/
+.idea/
+*.user
+*.suo
+
+# Archivos de publicación
+publish/
+*.publish.xml
+
+# Paquetes NuGet
+*.nup
