@@ -6,12 +6,12 @@
 ## Como se ve la aplicacion Corriendo 
 [![image.png](https://i.postimg.cc/tgNWDH6d/image.png)](https://postimg.cc/Jyts4vPt)
 
-##Url Para acceder a los Metodos
+## Url Para acceder a los Metodos
 ## get
 ```shell
 http://localhost:44374/api/inConteo/Listar
 ```
-##Post
+## Post
 ```shell
 http://localhost:44374/api/inConteo/Agregar/
 ```
@@ -23,7 +23,7 @@ body
 }
 ```
 
-##Put
+## Put
 ```shell
 http://localhost:44374/api/inConteo/Agregar/
 ```
@@ -36,7 +36,7 @@ body
 }
 ```
 
-##Delete/Destroy
+## Delete/Destroy
 ```shell
 http://localhost:44374/api/inConteo/Destroy/
 ```
