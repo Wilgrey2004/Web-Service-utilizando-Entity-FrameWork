@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{05C4DFD4-E497-485F-AB76-788982533C9E}|WebApplication1\\WebApplication1.csproj|d:\\itla\\c6\\programacion 3\\proyectos\\proyecto-final\\web-service-utilizando-entity-framework\\webapplication1\\webapplication1\\controllers\\inconteocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05C4DFD4-E497-485F-AB76-788982533C9E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\inconteocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05C4DFD4-E497-485F-AB76-788982533C9E}|WebApplication1\\WebApplication1.csproj|d:\\itla\\c6\\programacion 3\\proyectos\\proyecto-final\\web-service-utilizando-entity-framework\\webapplication1\\webapplication1\\models\\viermodels\\inconteoviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05C4DFD4-E497-485F-AB76-788982533C9E}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\viermodels\\inconteoviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,22 +28,9 @@
               "RelativeDocumentMoniker": "WebApplication1\\Controllers\\InConteoController.cs",
               "ToolTip": "D:\\Itla\\C6\\Programacion 3\\Proyectos\\proyecto-final\\Web-Service-utilizando-Entity-FrameWork\\WebApplication1\\WebApplication1\\Controllers\\InConteoController.cs",
               "RelativeToolTip": "WebApplication1\\Controllers\\InConteoController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAmwAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAD4v0oAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T22:36:18.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InConteoViews.cs",
-              "DocumentMoniker": "D:\\Itla\\C6\\Programacion 3\\Proyectos\\proyecto-final\\Web-Service-utilizando-Entity-FrameWork\\WebApplication1\\WebApplication1\\Models\\VierModels\\InConteoViews.cs",
-              "RelativeDocumentMoniker": "WebApplication1\\Models\\VierModels\\InConteoViews.cs",
-              "ToolTip": "D:\\Itla\\C6\\Programacion 3\\Proyectos\\proyecto-final\\Web-Service-utilizando-Entity-FrameWork\\WebApplication1\\WebApplication1\\Models\\VierModels\\InConteoViews.cs",
-              "RelativeToolTip": "WebApplication1\\Models\\VierModels\\InConteoViews.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:32:41.396Z",
               "EditorCaption": ""
             }
           ]

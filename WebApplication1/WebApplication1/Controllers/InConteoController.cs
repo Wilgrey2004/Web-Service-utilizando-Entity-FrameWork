@@ -3,34 +3,37 @@ using System.Linq;
 using System.Web.Http;
 using WebApplication1.Models;
 using WebApplication1.Models.VierModels;
+using System;
+using System.Net;
+using System.Net.Http;
+using System.Collections;
 
 
 namespace WebApplication1.Controllers
 {
-
-
+     
         public class InConteoController : ApiController
 
         {
                 // GET: InConteo
-                [System.Web.Http.HttpGet]
-                public IHttpActionResult Get() {
+                [HttpGet]
+                public IEnumerable<InConteoViews> Listar() {
                         List<InConteoViews> lst = new List<InConteoViews>();
 
                         using (inventarioEntitie db = new inventarioEntitie())
                         {
-                                lst = (from d in db.InConteo
+                                lst = (from d in db.InConteo where d.estatus == 1
                                        select new InConteoViews {
                                                Id = d.id,
                                                Nombre = d.Nombre,
                                                Catidad = (int)d.cantidad,
                                        }).ToList();
                         }
-                        return Ok(lst);
+                        return lst;
                 }
 
-                [System.Web.Http.HttpPost]
-                public IHttpActionResult Post( IConteoPost obj ) {
+                [HttpPost]
+                public IHttpActionResult Agregar( IConteoPost obj ) {
                         using (inventarioEntitie db = new inventarioEntitie())
                         {
                                 InConteo objeto = new InConteo();
@@ -43,8 +46,8 @@ namespace WebApplication1.Controllers
                         return Ok("Nuevo producto agregado");
                 }
 
-                [System.Web.Http.HttpPut]
-                public IHttpActionResult Put( InConteoViews Put ) {
+                [HttpPut]
+                public IHttpActionResult Actualizar( InConteoViews Put ) {
 
                         using (inventarioEntitie db = new inventarioEntitie())
                         {
@@ -52,7 +55,7 @@ namespace WebApplication1.Controllers
                                 {
                                         return Ok("No se encuentra El susuario Seleccionado");
                                 }
-                                
+
 
                                 InConteo inConteo = db.InConteo.FirstOrDefault(sf => sf.id == Put.Id);
 
@@ -70,14 +73,15 @@ namespace WebApplication1.Controllers
                         return Ok("Cambio Logrado...");
                 }
 
-                public IHttpActionResult Destroy(int id) {
+                [HttpDelete]
+                public IHttpActionResult Destroy( InConteoViews InConteoDestroy ) {
 
                         using (inventarioEntitie db = new inventarioEntitie())
                         {
-                                InConteo inConteoDestroy = db.InConteo.FirstOrDefault(f => f.id == id);
+                                InConteo inConteoDestroy = db.InConteo.FirstOrDefault(f => f.id == InConteoDestroy.Id);
 
                                 if (inConteoDestroy == null) { return Ok("Producto no encontrado."); }
-                                
+
                                 inConteoDestroy.estatus = 2;
                                 db.SaveChanges();
 
